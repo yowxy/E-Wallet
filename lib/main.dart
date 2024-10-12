@@ -1,3 +1,4 @@
+import 'package:e_wallet/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -89,7 +90,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Image.asset('assets/img_logo_light.png',)
+        child: Text(
+          'Hallo Semua nyaaa!',
+          style: blackTextStyle.copyWith(
+            fontSize: 30,
+            fontWeight: semibold,
+            color: blueColor,
+          ),
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
