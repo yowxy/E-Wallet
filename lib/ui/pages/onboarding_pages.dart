@@ -1,5 +1,6 @@
 import "package:carousel_slider/carousel_slider.dart";
 import "package:e_wallet/shared/theme.dart";
+import "package:e_wallet/ui/pages/sign_in_pages.dart";
 import "package:flutter/material.dart";
 
 class OnboardingPage extends StatefulWidget {
@@ -24,7 +25,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     'We provide tips for you so that \nyou can adapt easier',
     'We will guide you to where \nyou wanted it too',
   ];
-   
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +79,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               child: Column(
                 children: [
                   Text(
-                     titles[currentIndex],
+                    titles[currentIndex],
                     style: blackTextStyle.copyWith(
                       fontSize: 22,
                       fontWeight: semibold,
@@ -96,99 +97,101 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
-                    height: currentIndex == 2 ? 38: 50,
+                    height: currentIndex == 2 ? 38 : 50,
                   ),
-                  currentIndex == 2 ?  
-                    Column(
-                      children: [
-
-                      SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: purpleColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(56),
+                  currentIndex == 2
+                      ? Column(
+                          children: [
+                            SizedBox(
+                              width: double.infinity,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  carouselController.nextPage();
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: purpleColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(56),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Get Started',
+                                  style: whiteTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: semibold,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                          child: Text(
-                            'Get Started',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 16,
-                              fontWeight: semibold,
+                            const SizedBox(
+                              height: 20,
                             ),
-                          ),
+                            SizedBox(
+                              width: double.infinity,
+                              height: 24,
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SignInPage(),
+                                    ),
+                                  );
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                child: Text(
+                                  'Sign in',
+                                  style: greyTextStyle.copyWith(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                      : Row(
+                          children: [
+                            // Indicator circles
+                            for (int i = 0; i < 3; i++)
+                              Container(
+                                width: 12,
+                                height: 12,
+                                margin: EdgeInsets.only(right: 10),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: currentIndex == i
+                                      ? blueColor
+                                      : lightBackgroundColor,
+                                ),
+                              ),
+                            const Spacer(),
+                            SizedBox(
+                              width: 150,
+                              height: 50,
+                              child: TextButton(
+                                onPressed: () {
+                                  carouselController.nextPage();
+                                },
+                                style: TextButton.styleFrom(
+                                  backgroundColor: purpleColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(56),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Continue',
+                                  style: whiteTextStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: semibold,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      ),
-
-                      const SizedBox(
-                        height: 20,
-                      ),
-
-                      SizedBox(
-                        width: double.infinity,
-                        height: 24,
-                        child: TextButton(
-                          onPressed: () {
-
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Text(
-                            'Sign in',
-                            style: greyTextStyle.copyWith(
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                      )
-
-
-                      ],
-                    ): 
-                  Row(
-                    children: [
-                      // Indicator circles
-                      for (int i = 0; i < 3; i++)
-                        Container(
-                          width: 12,
-                          height: 12,
-                          margin: EdgeInsets.only(right: 10),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: currentIndex == i ? blueColor : lightBackgroundColor,
-                          ),
-                        ),
-                      const Spacer(),
-                      SizedBox(
-                        width: 150,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {
-                            carouselController.nextPage();
-                          },
-                          style: TextButton.styleFrom(
-                            backgroundColor: purpleColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(56),
-                            ),
-                          ),
-                          child: Text(
-                            'Continue',
-                            style: whiteTextStyle.copyWith(
-                              fontSize: 16,
-                              fontWeight: semibold,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
                 ],
               ),
             ),
