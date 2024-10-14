@@ -2,9 +2,29 @@ import "package:carousel_slider/carousel_slider.dart";
 import "package:e_wallet/shared/theme.dart";
 import "package:flutter/material.dart";
 
-class OnboardingPage extends StatelessWidget {
+class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
+  @override
+  State<OnboardingPage> createState() => _OnboardingPageState();
+}
+
+class _OnboardingPageState extends State<OnboardingPage> {
+  int currentIndex = 0;
+  CarouselSliderController carouselController = CarouselSliderController();
+
+  List<String> titles = [
+    'Grow Your \nFinancial Today',
+    'Build From \nZero to Freedom',
+    'Start Together',
+  ];
+
+  List<String> subtitles = [
+    'Our system is helping you to \nachieve a better goal',
+    'We provide tips for you so that \nyou can adapt easier',
+    'We will guide you to where \nyou wanted it too',
+  ];
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +52,13 @@ class OnboardingPage extends StatelessWidget {
                 height: 331,
                 viewportFraction: 1,
                 enableInfiniteScroll: false,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
               ),
+              carouselController: carouselController,
             ),
             const SizedBox(
               height: 80,
@@ -52,7 +78,7 @@ class OnboardingPage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Grow Your\nFinancial Today',
+                     titles[currentIndex],
                     style: blackTextStyle.copyWith(
                       fontSize: 22,
                       fontWeight: semibold,
@@ -63,7 +89,7 @@ class OnboardingPage extends StatelessWidget {
                     height: 26,
                   ),
                   Text(
-                    'Our system is helping you to \nachieve a better goal',
+                    subtitles[currentIndex],
                     style: greyTextStyle.copyWith(
                       fontSize: 16,
                     ),
@@ -74,59 +100,45 @@ class OnboardingPage extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Container(
-                        width: 12,
-                        height: 12,
-                        margin: EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: blueColor,
+                      // Indicator circles
+                      for (int i = 0; i < 3; i++)
+                        Container(
+                          width: 12,
+                          height: 12,
+                          margin: EdgeInsets.only(right: 10),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: currentIndex == i ? blueColor : lightBackgroundColor,
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: 12,
-                        height: 12,
-                        margin: EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: lightBackgroundColor,
-                        ),
-                      ),
-                      Container(
-                        width: 12,
-                        height: 12,
-                        margin: EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: lightBackgroundColor,
-                        ),
-                      ),
                       const Spacer(),
                       Container(
                         width: 150,
                         height: 50,
                         child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom(
-                              backgroundColor: purpleColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(56)
-                              )
-                            ), 
-                            child: Text(
-                              'Continue',
-                              style: whiteTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: semibold,
-                              ),
-                              )
+                          onPressed: () {
+                            carouselController.nextPage();
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: purpleColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(56),
+                            ),
                           ),
+                          child: Text(
+                            'Continue',
+                            style: whiteTextStyle.copyWith(
+                              fontSize: 16,
+                              fontWeight: semibold,
+                            ),
+                          ),
+                        ),
                       )
                     ],
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
