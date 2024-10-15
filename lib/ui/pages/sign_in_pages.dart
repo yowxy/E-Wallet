@@ -1,4 +1,5 @@
 import "package:e_wallet/shared/theme.dart";
+import "package:e_wallet/ui/widgets/buttons.dart";
 import "package:flutter/material.dart";
 
 class SignInPage extends StatelessWidget {
@@ -111,28 +112,10 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {
-                      // carouselController.nextPage();
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: purpleColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(56),
-                      ),
-                    ),
-                    child: Text(
-                      'Sign In',
-                      style: whiteTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: semibold,
-                      ),
-                    ),
+                CustomFilledButtom(
+                  title: 'Sign-in',
+                  onPressed: (){},
                   ),
-                ),
               ],
             ),
           ),
@@ -141,29 +124,11 @@ class SignInPage extends StatelessWidget {
             height: 50,
           ),
 
-          SizedBox(
-            width: double.infinity,
-            height: 24,
-            child: TextButton(
-              onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const SignInPage(),
-                //   ),
-                // );
-              },
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Text(
-                'Create  New Account ',
-                style: greyTextStyle.copyWith(
-                  fontSize: 16,
-                ),
-              ),
+          CustomTextButton(
+            title: 'Create New Account',
+            onPressed: (){},
             ),
-          )
+         
         ],
       ),
     );
