@@ -1,10 +1,10 @@
-import "package:e_wallet/shared/theme.dart";
-import "package:e_wallet/ui/widgets/buttons.dart";
-import "package:e_wallet/ui/widgets/forms.dart";
-import "package:flutter/material.dart";
+import 'package:e_wallet/shared/theme.dart';
+import 'package:e_wallet/ui/widgets/buttons.dart';
+import 'package:e_wallet/ui/widgets/forms.dart';
+import 'package:flutter/material.dart';
 
-class SignUpSetPage extends StatelessWidget {
-  const SignUpSetPage({super.key});
+class SignUpUploadKtpPage extends StatelessWidget {
+  const SignUpUploadKtpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class SignUpSetPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Join Us to Unlock \nYour Growth',
+            'Verify Your \n Account',
             style: blackTextStyle.copyWith(
               fontWeight: semibold,
               fontSize: 21,
@@ -48,52 +48,46 @@ class SignUpSetPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                // Container(
-                //   width: 120,
-                //   height: 120,
-                //   decoration: BoxDecoration(
-                //     shape: BoxShape.circle,
-                //     color: lightBackgroundColor,
-                //   ),
-                //   child: Center(
-                //     child: Image.asset(
-                //       'assets/ic_upload.png',
-                //       width: 32,
-                //     ),
-                //   ),
-                // ),
                 Container(
                   width: 120,
                   height: 120,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(
-                        'assets/img_profile.png'
-                        ),
-                      ),
+                    color: lightBackgroundColor,
                   ),
-                 
+                  child: Center(
+                    child: Image.asset(
+                      'assets/ic_upload.png',
+                      width: 32,
+                    ),
+                  ),
                 ),
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: const BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     image: DecorationImage(
+                //       fit: BoxFit.cover,
+                //       image: AssetImage(
+                //         'assets/img_profile.png'
+                //         ),
+                //       ),
+                //   ),
+                 
+                // ),
                 const SizedBox(
                   height: 16,
                 ),
                 Text(
-                  'Shayna Hanna',
+                  'Passport/ID Card',
                   style: blackTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: semibold,
                   ),
                 ),
                 const SizedBox(
-                  height: 30,
-                ),
-                CustomFormFilled(
-                  title: 'Set PIN (6 digit number)',
-                ),
-                const SizedBox(
-                  height: 30,
+                  height: 50,
                 ),
                 CustomFilledButtom(
                   title: 'Continue',
@@ -105,8 +99,12 @@ class SignUpSetPage extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
+          CustomTextButton(
+            title: 'Skip For Now',
+            onPressed: (){},
+            ),
         ],
       ),
     );
