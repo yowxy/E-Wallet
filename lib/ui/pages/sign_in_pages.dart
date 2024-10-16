@@ -1,5 +1,6 @@
 import "package:e_wallet/shared/theme.dart";
 import "package:e_wallet/ui/widgets/buttons.dart";
+import "package:e_wallet/ui/widgets/forms.dart";
 import "package:flutter/material.dart";
 
 class SignInPage extends StatelessWidget {
@@ -48,54 +49,16 @@ class SignInPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+                const CustomFormFilled(
+                  title: 'Email Addres',
+                  ),
                 const SizedBox(
                   height: 16,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+                CustomFormFilled(
+                  title: 'Password',
+                  obscureText: true,
+                  ),
                 const SizedBox(
                   height: 20,
                 ),
