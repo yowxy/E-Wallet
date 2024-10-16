@@ -3,12 +3,12 @@ import "package:e_wallet/ui/widgets/buttons.dart";
 import "package:e_wallet/ui/widgets/forms.dart";
 import "package:flutter/material.dart";
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpSetPage extends StatelessWidget {
+  const SignUpSetPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       backgroundColor: lightBackgroundColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -47,51 +47,64 @@ class SignUpPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomFormFilled(
-                  title: 'Full Name',
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset(
+                //       'assets/ic_upload.png',
+                //       width: 32,
+                //     ),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        'assets/img_profile.png'
+                        ),
+                      ),
                   ),
+                 
+                ),
                 const SizedBox(
                   height: 16,
                 ),
-                CustomFormFilled(
-                  title: 'Email Address',
-                  obscureText: false,
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: semibold,
                   ),
-                const SizedBox(
-                  height: 20,
                 ),
-
+                const SizedBox(
+                  height: 30,
+                ),
                 CustomFormFilled(
-                  title: 'Password',
-                  obscureText: true,
-                  ),
-                
+                  title: 'Set PIN (6 digit number)',
+                ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButtom(
                   title: 'Continue',
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/sign-up-set-profile');
-                  },
-                  ),
+                  onPressed: () {},
+                ),
               ],
             ),
           ),
-
           const SizedBox(
             height: 20,
           ),
-
-          CustomTextButton(
-            title: 'Sign-In',
-            onPressed: (){
-              Navigator.pushNamed(context, '/sign-in');
-            },
-            ),
-         
         ],
       ),
     );
