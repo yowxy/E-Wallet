@@ -3,12 +3,12 @@ import "package:e_wallet/ui/widgets/buttons.dart";
 import "package:e_wallet/ui/widgets/forms.dart";
 import "package:flutter/material.dart";
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       backgroundColor: lightBackgroundColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -31,7 +31,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In & \nGrow Your Finance',
+            'Join Us to Unlock \nYour Growth',
             style: blackTextStyle.copyWith(
               fontWeight: semibold,
               fontSize: 21,
@@ -50,49 +50,43 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomFormFilled(
-                  title: 'Email Addres',
+                  title: 'Full Name',
                   ),
                 const SizedBox(
                   height: 16,
                 ),
                 CustomFormFilled(
-                  title: 'Password',
-                  obscureText: true,
+                  title: 'Email Address',
+                  obscureText: false,
                   ),
                 const SizedBox(
                   height: 20,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle.copyWith(
-                      fontSize: 14,
-                      // fontWeight: semibold,
-                    ),
+
+                CustomFormFilled(
+                  title: 'Password',
+                  obscureText: true,
                   ),
-                ),
+                
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButtom(
-                  title: 'Sign-in',
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/sign-in');
-                  },
+                  title: 'Continue',
+                  onPressed: (){},
                   ),
               ],
             ),
           ),
 
           const SizedBox(
-            height: 50,
+            height: 20,
           ),
 
           CustomTextButton(
-            title: 'Create New Account',
+            title: 'Sign-In',
             onPressed: (){
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
             ),
          
