@@ -90,6 +90,7 @@ class SignUpSetPage extends StatelessWidget {
                   height: 30,
                 ),
                 CustomFormFilled(
+                  obscureText: true,
                   title: 'Set PIN (6 digit number)',
                 ),
                 const SizedBox(
