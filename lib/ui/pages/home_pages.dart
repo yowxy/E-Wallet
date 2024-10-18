@@ -77,6 +77,7 @@ class HomePage extends StatelessWidget {
         ),
         children: [
           BuildProfile(),
+          buildWalletCard(),
         ],
       ),
     );
@@ -113,13 +114,12 @@ class HomePage extends StatelessWidget {
             width: 60,
             height: 60,
             decoration: const BoxDecoration(
-              shape:  BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/img_profile.png',
-                  ), 
-                  )
-            ),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/img_profile.png',
+                  ),
+                )),
             child: Align(
               alignment: Alignment.topRight,
               child: Container(
@@ -137,6 +137,62 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget buildWalletCard() {
+    return Container(
+      width: double.infinity,
+      height: 220,
+      margin: EdgeInsets.only(top: 40),
+      padding: const EdgeInsets.all(30),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage(
+              'assets/img_card.png',
+            ),
+          )),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Shayna Hanna',
+            style: whiteTextStyle.copyWith(
+              fontWeight: medium,
+              fontSize: 18,
+            ),
+          ),
+          const SizedBox(
+            height: 28,
+          ),
+          Text(
+            '**** **** *** 1280',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+              letterSpacing: 6,
+            ),
+          ),
+          const SizedBox(
+            height: 21,
+          ),
+          Text(
+            'Balance',
+            style: whiteTextStyle.copyWith(
+              fontSize: 14,
+            ),
+          ),
+          Text(
+            'Rp 12.5000',
+            style: whiteTextStyle.copyWith(
+              fontSize: 24,
+              fontWeight: semibold,
             ),
           )
         ],
