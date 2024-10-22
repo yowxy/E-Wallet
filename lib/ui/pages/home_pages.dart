@@ -81,6 +81,7 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildServices(),
+          buildLatestTransactions(),
         ],
       ),
     );
@@ -305,5 +306,44 @@ class HomePage extends StatelessWidget {
     ),
    ); 
   }
+
+  Widget buildLatestTransactions(){
+    return Container(
+      margin: EdgeInsets.only(
+        top: 20,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Latest Transactions',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semibold,
+            ),
+          ),
+
+
+
+          // const SizedBox(
+          //   height: 14,
+          // ),
+
+
+          Container(
+            padding: const EdgeInsets.all(22),
+            margin: const EdgeInsets.only(
+              top: 14,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+               color: whiteColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 
 }
