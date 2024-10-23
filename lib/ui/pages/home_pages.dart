@@ -472,7 +472,7 @@ class HomePage extends StatelessWidget {
             HomeTipsItem(
               imageUrl: 'assets/img_tips1.png', 
               title: 'Best tips for using \na credit card', 
-               url: 'https://google.com/',
+               url: 'https://pub.dev/',
               ),
 
 

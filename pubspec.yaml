@@ -33,6 +33,7 @@ dependencies:
   google_fonts: ^6.2.1
   path_provider: ^2.0.11  # Add this line for path_provider
   carousel_slider: ^5.0.0
+  url_launcher: ^6.3.1
 
 
   # The following adds the Cupertino Icons font to your application.
