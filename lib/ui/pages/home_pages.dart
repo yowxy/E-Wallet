@@ -446,6 +446,7 @@ class HomePage extends StatelessWidget {
   Widget buildFriendlyTips(){
     return Container(
       margin: const EdgeInsets.only(
+        bottom: 50,
         top: 30,
       ),
       child: Column(
@@ -464,11 +465,40 @@ class HomePage extends StatelessWidget {
               height: 14 ,
             ),
 
+            Wrap(
+              spacing: 17,
+              runSpacing: 18,
+              children: const  [
             HomeTipsItem(
               imageUrl: 'assets/img_tips1.png', 
               title: 'Best tips for using \na credit card', 
                url: 'https://google.com/',
-              )
+              ),
+
+
+            HomeTipsItem(
+              imageUrl: 'assets/img_tips2.png', 
+              title: 'Spot the good pie \nof finance model', 
+               url: 'https://google.com/',
+              ),
+
+
+            HomeTipsItem(
+              imageUrl: 'assets/img_tips3.png', 
+              title: 'Great hack to get \nbetter advices', 
+               url: 'https://google.com/',
+              ),
+
+
+            HomeTipsItem(
+              imageUrl: 'assets/img_tips4.png', 
+              title: 'Save more penny \n buy this instead', 
+               url: 'https://google.com/',
+              ),
+
+              ],
+            ),
+
         ],
       ),
     );
