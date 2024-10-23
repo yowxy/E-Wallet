@@ -1,5 +1,6 @@
 import "package:e_wallet/shared/theme.dart";
 import "package:e_wallet/ui/widgets/home_service_item.dart";
+import "package:e_wallet/ui/widgets/home_transactions_item.dart";
 import "package:flutter/material.dart";
 
 class HomePage extends StatelessWidget {
@@ -338,6 +339,53 @@ class HomePage extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
                color: whiteColor,
+            ),
+            child:  const  Column(
+              children: [
+
+
+                HomeTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat1.png', 
+                  title: 'Top Up', 
+                  time: 'Yesterday', 
+                  value: '+450.000'
+                ),
+
+
+                HomeTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat2.png', 
+                  title: 'Cashback', 
+                  time: 'Sep 11', 
+                  value: '+22.000'
+                ),
+
+
+                HomeTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat3.png', 
+                  title: 'Withdraw', 
+                  time: 'Sep 2', 
+                  value: '-5.000'
+                ),
+
+
+
+                HomeTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat4.png', 
+                  title: 'Transfer', 
+                  time: 'Aug 27', 
+                  value: '-123.500'
+                ),
+
+
+                HomeTransactionsItem(
+                  iconUrl: 'assets/ic_transaction_cat5.png', 
+                  title: 'Electric', 
+                  time: 'Feb 18', 
+                  value: '-12.300.000'
+                ),
+
+
+              ],
             ),
           ),
         ],
