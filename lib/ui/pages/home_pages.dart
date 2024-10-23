@@ -1,5 +1,6 @@
 import "package:e_wallet/shared/theme.dart";
 import "package:e_wallet/ui/widgets/home_service_item.dart";
+import "package:e_wallet/ui/widgets/home_tips_item.dart";
 import "package:e_wallet/ui/widgets/home_transactions_item.dart";
 import "package:e_wallet/ui/widgets/home_user_item.dart";
 import "package:flutter/material.dart";
@@ -85,6 +86,7 @@ class HomePage extends StatelessWidget {
           buildServices(),
           buildLatestTransactions(),
           buildSendAgain(),
+          buildFriendlyTips(),
         ],
       ),
     );
@@ -386,8 +388,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-  
-  
+    
   Widget buildSendAgain(){
     return Container(
       margin: EdgeInsets.only(
@@ -442,5 +443,35 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget buildFriendlyTips(){
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+            Text(
+              'Friendly Tips',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semibold,
+              ),
+            ),
+
+            const SizedBox(
+              height: 14 ,
+            ),
+
+            HomeTipsItem(
+              imageUrl: 'assets/img_tips1.png', 
+              title: 'Best tips for using \na credit card', 
+               url: 'https://google.com/',
+              )
+        ],
+      ),
+    );
+  }
 
 }
