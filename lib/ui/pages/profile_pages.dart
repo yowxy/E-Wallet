@@ -1,4 +1,6 @@
 import "package:e_wallet/shared/theme.dart";
+import "package:e_wallet/ui/widgets/buttons.dart";
+import "package:e_wallet/ui/widgets/profile_item_menu.dart";
 import "package:flutter/material.dart";
 
 class ProfilePage extends StatelessWidget {
@@ -6,7 +8,9 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+ 
+  
+    return Scaffold(    
       appBar: AppBar(
         backgroundColor: lightBackgroundColor,
         centerTitle: true,
@@ -29,7 +33,7 @@ class ProfilePage extends StatelessWidget {
         ),
         children: [
           const SizedBox(
-            height: 40,
+            height: 30,
           ),
           Container(
             padding: const EdgeInsets.symmetric(
@@ -78,10 +82,66 @@ class ProfilePage extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: medium,
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+
+
+
+               ProfileItemMenu(
+                iconUrl: 'assets/ic_edit_profile.png', 
+                title: 'Edit Profile',
+                onTap: (){},
+                ),
+
+
+               ProfileItemMenu(
+                iconUrl: 'assets/ic_pin.png', 
+                title: 'My Pin',
+                onTap: (){},
+                ),
+
+
+               ProfileItemMenu(
+                iconUrl: 'assets/ic_wallet.png', 
+                title: 'Wallet Settings',
+                onTap: (){},
+                ),
+
+
+               ProfileItemMenu(
+                iconUrl: 'assets/ic_my_rewards.png', 
+                title: 'My Rewards',
+                onTap: (){},
+                ),
+
+
+               ProfileItemMenu(
+                iconUrl: 'assets/ic_help.png', 
+                title: 'Help Center',
+                onTap: (){},
+                ),
+
+
+               ProfileItemMenu(
+                iconUrl: 'assets/ic_logout.png', 
+                title: 'Log out',
+                onTap: (){},
+                ),
+
               ],
             ),
           ),
+          const SizedBox(
+            height: 87,
+          ),
+          CustomTextButton(
+            title: 'Report a problem',
+          ),
+          const SizedBox(
+            height: 50,
+          )
         ],
       ),
     );
