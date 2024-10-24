@@ -12,19 +12,8 @@ class ProfilePage extends StatelessWidget {
   
     return Scaffold(    
       appBar: AppBar(
-        backgroundColor: lightBackgroundColor,
-        centerTitle: true,
-        elevation: 0,
-        iconTheme: IconThemeData(
-          color: blackColor,
-        ),
         title: Text(
           'My Profile',
-          textAlign: TextAlign.center,
-          style: blackTextStyle.copyWith(
-            fontSize: 20,
-            fontWeight: semibold,
-          ),
         ),
       ),
       body: ListView(

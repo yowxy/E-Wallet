@@ -1,3 +1,4 @@
+import 'package:e_wallet/shared/theme.dart';
 import 'package:e_wallet/ui/pages/home_pages.dart';
 import 'package:e_wallet/ui/pages/onboarding_pages.dart';
 import 'package:e_wallet/ui/pages/profile_pages.dart';
@@ -17,6 +18,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: lightBackgroundColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: lightBackgroundColor,
+          elevation: 0,
+          centerTitle: true,
+          iconTheme: IconThemeData(
+            color: blackColor,
+          )
+        )
+      ),
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const SplashPage(),
