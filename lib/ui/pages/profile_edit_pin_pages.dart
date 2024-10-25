@@ -3,15 +3,15 @@ import "package:e_wallet/ui/widgets/buttons.dart";
 import "package:e_wallet/ui/widgets/forms.dart";
 import "package:flutter/material.dart";
 
-class ProfileEditPage extends StatelessWidget {
-  const ProfileEditPage({super.key});
+class ProfileEditPinPage extends StatelessWidget {
+  const ProfileEditPinPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Edit Profile',
+          'Edit PIN',
         ),
       ),
       body: ListView(
@@ -32,30 +32,17 @@ class ProfileEditPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const CustomFormFilled(
-                    title: 'Username',
+                    title: 'Old PIN',
                   ),
                   const SizedBox(
                     height: 16,
                   ),
                   const CustomFormFilled(
-                    title: 'Full Name',
+                    title: 'New PIN',
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  CustomFormFilled(
-                    title: 'Email Address',
-                    obscureText: false,
-                    ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-
-                  CustomFormFilled(
-                    title: 'Password',
-                    obscureText: true,
-                    ),
-                  
                   const SizedBox(
                     height: 30,
                   ),
