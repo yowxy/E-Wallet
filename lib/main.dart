@@ -4,6 +4,7 @@ import 'package:e_wallet/ui/pages/onboarding_pages.dart';
 import 'package:e_wallet/ui/pages/pin_pages.dart';
 import 'package:e_wallet/ui/pages/profile_edit_pages.dart';
 import 'package:e_wallet/ui/pages/profile_edit_pin_pages.dart';
+import 'package:e_wallet/ui/pages/profile_edit_success_pages.dart';
 import 'package:e_wallet/ui/pages/profile_pages.dart';
 import 'package:e_wallet/ui/pages/sign_in_pages.dart';
 import 'package:e_wallet/ui/pages/sign_up_pages.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
         '/pin': (context) => const PinPage(),
         '/profile-edit': (context) => const ProfileEditPage(),
         '/profile-edit-pin': (context) => const ProfileEditPinPage(),
+        '/profile-edit-success': (context) => const ProfileEditSuccessPage(),
       },
     );
   }
