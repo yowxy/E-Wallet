@@ -39,44 +39,44 @@ class SignUpPage extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          Container(
-            padding: const EdgeInsets.all(22),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: whiteColor,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CustomFormFilled(
-                  title: 'Full Name',
+            Container(
+              padding: const EdgeInsets.all(22),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: whiteColor,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const CustomFormFilled(
+                    title: 'Full Name',
+                    ),
+                  const SizedBox(
+                    height: 16,
                   ),
-                const SizedBox(
-                  height: 16,
-                ),
-                CustomFormFilled(
-                  title: 'Email Address',
-                  obscureText: false,
+                  CustomFormFilled(
+                    title: 'Email Address',
+                    obscureText: false,
+                    ),
+                  const SizedBox(
+                    height: 20,
                   ),
-                const SizedBox(
-                  height: 20,
-                ),
 
-                CustomFormFilled(
-                  title: 'Password',
-                  obscureText: true,
+                  CustomFormFilled(
+                    title: 'Password',
+                    obscureText: true,
+                    ),
+                  
+                  const SizedBox(
+                    height: 30,
                   ),
-                
-                const SizedBox(
-                  height: 30,
-                ),
-                CustomFilledButtom(
-                  title: 'Continue',
-                  onPressed: (){
-                    Navigator.pushNamed(context, '/sign-up-set-profile');
-                  },
-                  ),
-              ],
+                  CustomFilledButtom(
+                    title: 'Continue',
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/sign-up-set-profile');
+                    },
+                    ),
+                ],
             ),
           ),
 
