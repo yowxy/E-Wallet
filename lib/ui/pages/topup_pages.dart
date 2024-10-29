@@ -118,7 +118,9 @@ class TopupPage extends StatelessWidget {
 
           CustomFilledButtom(
             title: 'Continue',
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, '/topup-amount');
+            },
             ),
 
             const SizedBox(
