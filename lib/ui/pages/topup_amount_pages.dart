@@ -1,6 +1,8 @@
 import "package:e_wallet/shared/theme.dart";
 import "package:e_wallet/ui/widgets/buttons.dart";
 import "package:flutter/material.dart";
+import "package:intl/intl.dart";
+import "package:url_launcher/url_launcher.dart";
 
 class TopUpAmountPage extends StatefulWidget {
   const TopUpAmountPage({super.key});
@@ -12,6 +14,25 @@ class TopUpAmountPage extends StatefulWidget {
 class _TopupAmountPageState extends State<TopUpAmountPage> {
   final TextEditingController amountController =
       TextEditingController(text: '0');
+
+  @override
+  void initState() {
+    super.initState();
+
+    amountController.addListener(() {
+      final text = amountController.text;
+
+      amountController.value = amountController.value.copyWith(
+        text: NumberFormat.currency(
+          locale: 'id',
+          decimalDigits: 0,
+          symbol: '',
+        ).format(
+          int.tryParse(text.replaceAll('.', '')) ?? 0,
+        ),
+      );
+    });
+  }
 
   addAmount(String number) {
     if (amountController.text == '0') {
@@ -41,9 +62,7 @@ class _TopupAmountPageState extends State<TopUpAmountPage> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 58),
         children: [
-          const SizedBox(
-            height: 55
-          ),
+          const SizedBox(height: 55),
           Center(
             child: Text(
               'Total Amount',
@@ -123,9 +142,12 @@ class _TopupAmountPageState extends State<TopUpAmountPage> {
           ),
           CustomFilledButtom(
             title: 'Check out Now',
-            onPressed: () async{
-              if(await Navigator.pushNamed(context, '/pin') == true ){
-                Navigator.pushNamedAndRemoveUntil(context, '/topup-success', (route) =>false );
+            onPressed: () async {
+              if (await Navigator.pushNamed(context, '/pin') == true) {
+                await launchUrl(Uri.parse('https://demo.midtrans.com/'));
+
+                Navigator.pushNamedAndRemoveUntil(
+                    context, '/topup-success', (route) => false);
               }
             },
           ),
