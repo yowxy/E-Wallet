@@ -1,5 +1,7 @@
 import "package:e_wallet/shared/theme.dart";
+import "package:e_wallet/ui/widgets/buttons.dart";
 import "package:e_wallet/ui/widgets/forms.dart";
+import "package:e_wallet/ui/widgets/transfer_result_user_item.dart";
 import "package:e_wallet/ui/widgets/transfer_widget_users_item.dart";
 import "package:flutter/material.dart";
 
@@ -35,7 +37,20 @@ class TransferPages extends StatelessWidget {
             title: 'by username',
             iShowTitle: false,
           ),
-          buildRecentUsers(),
+          // buildRecentUsers(),
+          buildResult(),
+
+          const SizedBox(
+            height: 274,
+          ),
+          CustomFilledButtom(
+            title: 'continue',
+            onPressed: (){},
+            ),
+
+          const SizedBox(
+            height: 50,
+          )
         ],
       ),
 
@@ -92,5 +107,63 @@ class TransferPages extends StatelessWidget {
       ),
     );
   }
+
+
+    Widget buildResult(){
+      return Container(
+        margin: const EdgeInsets.only(
+          top: 40,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Result",
+              style: blackTextStyle.copyWith(
+                fontWeight: semibold,
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(
+              height: 14,
+            ),
+            Wrap(
+              spacing: 17,
+              runSpacing: 17,
+              children: [
+                  const TransferResultUserItem(
+                  imageUrl: 'assets/img_friend1.png', 
+                  name: 'Yonna Jie', 
+                  username: 'yoenna', 
+                  isVerified: true,
+                  isSelected: true,
+              ),
+              
+                  const TransferResultUserItem(
+                  imageUrl: 'assets/img_friend2.png', 
+                  name: 'Yonna Jie', 
+                  username: 'yoenna', 
+                  isVerified: true,
+              ),
+                  const TransferResultUserItem(
+                  imageUrl: 'assets/img_friend1.png', 
+                  name: 'Yonna Jie', 
+                  username: 'yoenna', 
+                  isVerified: true,
+                  isSelected: true,
+              ),
+              
+                  const TransferResultUserItem(
+                  imageUrl: 'assets/img_friend2.png', 
+                  name: 'Yonna Jie', 
+                  username: 'yoenna', 
+                  isVerified: true,
+              ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
 
 }
