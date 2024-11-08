@@ -45,7 +45,9 @@ class TransferPages extends StatelessWidget {
           ),
           CustomFilledButtom(
             title: 'continue',
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, '/transfer-amount');
+            },
             ),
 
           const SizedBox(
