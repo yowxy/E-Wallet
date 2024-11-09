@@ -311,7 +311,9 @@ class HomePage extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/ic_more.png',
                  title: 'More', 
-                 ontTap: (){},
+                 ontTap: (){
+                  showDialog(context: context, builder: (context) => const MoreDialog());
+                 },
                 ),
             ],
           )
@@ -512,4 +514,26 @@ class HomePage extends StatelessWidget {
     );
   }
 
+}
+
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        height: 326,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: lightBackgroundColor,
+        ),
+      ),
+    );
+  }
 }
