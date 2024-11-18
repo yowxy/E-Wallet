@@ -527,11 +527,64 @@ class MoreDialog extends StatelessWidget {
       insetPadding: EdgeInsets.zero,
       alignment: Alignment.bottomCenter,
       content: Container(
+        padding: const EdgeInsets.all(30),
         height: 326,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: lightBackgroundColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More With us',
+              style: blackTextStyle.copyWith(
+                fontWeight: semibold,
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(
+              height: 13,
+            ),
+
+            Wrap(
+              spacing: 29,
+              runSpacing: 25,
+              children: [
+                HomeServiceItem(
+                iconUrl: 'assets/ic_product_data.png',
+                 title: 'Data', 
+                 ontTap: (){},
+                ),
+                HomeServiceItem(
+                iconUrl: 'assets/ic_product_water.png',
+                 title: 'water', 
+                 ontTap: (){},
+                ),
+                HomeServiceItem(
+                iconUrl: 'assets/ic_product_stream.png',
+                 title: 'stream', 
+                 ontTap: (){},
+                ),
+                HomeServiceItem(
+                iconUrl: 'assets/ic_product_movie.png',
+                 title: 'movie', 
+                 ontTap: (){},
+                ),
+                HomeServiceItem(
+                iconUrl: 'assets/ic_product_food.png',
+                 title: 'food', 
+                 ontTap: (){},
+                ),
+                HomeServiceItem(
+                iconUrl: 'assets/ic_product_travel.png',
+                 title: 'Travel', 
+                 ontTap: (){},
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
