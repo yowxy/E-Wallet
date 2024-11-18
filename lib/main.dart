@@ -1,4 +1,5 @@
 import 'package:e_wallet/shared/theme.dart';
+import 'package:e_wallet/ui/pages/data_provider_pages.dart';
 import 'package:e_wallet/ui/pages/home_pages.dart';
 import 'package:e_wallet/ui/pages/onboarding_pages.dart';
 import 'package:e_wallet/ui/pages/pin_pages.dart';
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
         '/transfer' : (context) =>  const TransferPages(),
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccessPage(),
+        '/data-provider': (context) => const DataProviderPages(),
       },
     );
   }
