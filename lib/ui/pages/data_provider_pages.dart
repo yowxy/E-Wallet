@@ -1,4 +1,5 @@
 import 'package:e_wallet/shared/theme.dart';
+import 'package:e_wallet/ui/widgets/data_item_provider.dart';
 import 'package:flutter/material.dart';
 
 class DataProviderPages extends StatelessWidget {
@@ -6,7 +7,7 @@ class DataProviderPages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Beli Data',
@@ -27,15 +28,14 @@ class DataProviderPages extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-
           const SizedBox(
             height: 10,
           ),
-
-          Row(children: [
-            Image.asset(
-              'assets/img_wallet.png',
-              width: 80,
+          Row(
+            children: [
+              Image.asset(
+                'assets/img_wallet.png',
+                width: 80,
               ),
               const SizedBox(
                 width: 16,
@@ -49,21 +49,35 @@ class DataProviderPages extends StatelessWidget {
                       fontWeight: medium,
                       fontSize: 16,
                     ),
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  Text(
+                    'Balance: Rp 180.000.000',
+                    style: greyTextStyle.copyWith(
+                      fontSize: 12,
+                      fontWeight: regular,
                     ),
-
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    Text(
-                      'Balance: Rp 180.000.000',
-                      style: greyTextStyle.copyWith(
-                        fontSize: 12,
-                        fontWeight: regular,
-                      ),
-                    )
+                  )
                 ],
               )
-          ],),
+            ],
+          ),
+          const SizedBox(
+            height:   40,
+          ),
+            Text(
+            'Select Provider',
+            style: blackTextStyle.copyWith(
+              fontWeight: semibold,
+              fontSize: 16,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+         const  DataItemProvider(),
         ],
       ),
     );
