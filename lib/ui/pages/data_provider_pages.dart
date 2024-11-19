@@ -1,4 +1,5 @@
 import 'package:e_wallet/shared/theme.dart';
+import 'package:e_wallet/ui/widgets/buttons.dart';
 import 'package:e_wallet/ui/widgets/data_item_provider.dart';
 import 'package:flutter/material.dart';
 
@@ -77,7 +78,29 @@ class DataProviderPages extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-         const  DataItemProvider(),
+         const DataItemProvider(
+          imageUrl: 'assets/img_provider_telkomsel.png', 
+          name: 'Telkomsel',
+          isSelected: true,
+          ),
+         const DataItemProvider(
+          imageUrl: 'assets/ic_provider_indosat.png', 
+          name: 'Indosat Ooredoo'
+          ),
+         const DataItemProvider(
+          imageUrl: 'assets/ic_provider_singtel.png', 
+          name: 'Singtel ID'
+          ),
+          const SizedBox(
+            height: 183,
+          ),
+          CustomFilledButtom(
+            title: 'Continue', 
+            onPressed: (){},
+          ),
+          const SizedBox(
+            height: 57,
+          )
         ],
       ),
     );

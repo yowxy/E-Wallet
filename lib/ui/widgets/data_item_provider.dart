@@ -10,7 +10,7 @@ class DataItemProvider extends StatelessWidget {
   const DataItemProvider({
     required this.imageUrl,
     required this.name,
-    required this.isSelected,
+    this.isSelected =  false,
     super.key
     });
 
@@ -18,22 +18,29 @@ class DataItemProvider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(22),
+      margin: const EdgeInsets.only(
+        bottom: 18,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: whiteColor,
+        border: isSelected ? Border.all(
+          width: 2,
+          color: blueColor,
+        ) : null,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
-            'assets/img_provider_telkomsel.png',
+             imageUrl,
             height: 30,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Telkomsel',
+                  name,
                   style: blackTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: medium,
